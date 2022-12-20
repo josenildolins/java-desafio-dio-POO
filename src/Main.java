@@ -19,11 +19,12 @@ public class Main {
 
 
         
-        
+        double teste = Conteudo.XP_PADRAO;
         
         System.out.println(java);
         System.out.println(javaScript);
         System.out.println(mentoria);
+        System.out.println("valor do xp_padrão " + teste);
 
 
     }
