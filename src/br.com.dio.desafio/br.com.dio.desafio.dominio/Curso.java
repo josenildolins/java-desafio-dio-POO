@@ -25,5 +25,14 @@ public class Curso extends Conteudo{
     public double CalcularXp() {
         return XP_PADRAO * cargaHoraria;
     };
+
+    public static Curso obterCurso(String titulo, String descricao, int cargaHoraria){
+        Curso curso = new Curso();
+        curso.setTitulo(titulo);
+        curso.setDescricao(descricao);
+        curso.setCargaHoraria(cargaHoraria);
+
+        return curso;
+    }
     
 }

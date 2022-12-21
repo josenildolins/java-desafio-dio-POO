@@ -11,6 +11,16 @@ public class BootCamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
    
+    
+    
+    
+
+    public BootCamp(String nome, String descricao, Set<Conteudo> conteudos) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.conteudos = conteudos;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -69,7 +79,7 @@ public class BootCamp {
     
     }
     
-    public void setConteudos(Set<Conteudo> conteudos) {
+    private void setConteudos(Set<Conteudo> conteudos) {
         this.conteudos = conteudos;
     }
 
@@ -126,6 +136,13 @@ public class BootCamp {
         } else if (!conteudos.equals(other.conteudos))
             return false;
         return true;
+    }
+
+    public  void criarBootCamp (){
+
+        this.setNome(nome);
+        this.setDescricao(descricao);
+        this.setConteudos(conteudos);
     }
     
     

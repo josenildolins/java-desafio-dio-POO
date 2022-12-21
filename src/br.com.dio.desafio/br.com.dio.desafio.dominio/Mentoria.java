@@ -3,18 +3,17 @@ import java.time.LocalDate;
 public class Mentoria extends Conteudo{
     private LocalDate data;
     
-    public Mentoria() {
-        super();
+    public Mentoria(String titulo, String descricao) {
+       this.setTitulo(titulo);
+        this.setDescricao(descricao);
+        setData(LocalDate.now());
     }
 
-    
     public LocalDate getData() {
-    
         return data;
-    
     }
     
-    public void setData(LocalDate data) {
+    private void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -32,5 +31,8 @@ public class Mentoria extends Conteudo{
         return  XP_PADRAO + 20d;
     };
 
-    
+    public void  obterMentoria(){
+         setTitulo(titulo);
+         setDescricao(descricao);
+    }
 }

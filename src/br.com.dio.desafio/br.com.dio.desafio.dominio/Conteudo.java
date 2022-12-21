@@ -2,8 +2,8 @@ public abstract class Conteudo {
     
     protected static final double XP_PADRAO = 10;
 
-    private String titulo;
-    private String descricao;
+    protected String titulo;
+    protected String descricao;
 
     public static double getXpPadrao() {
         return XP_PADRAO;
