@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-
 public class Mentoria extends Conteudo{
     private LocalDate data;
     
@@ -29,10 +28,5 @@ public class Mentoria extends Conteudo{
     @Override
     public double CalcularXp() {
         return  XP_PADRAO + 20d;
-    };
-
-    public void  obterMentoria(){
-         setTitulo(titulo);
-         setDescricao(descricao);
     }
 }

@@ -6,26 +6,55 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        Curso cursoJava = Curso.obterCurso("Java", "descrição aqui", 200);
-        Curso cursoJavaScript = Curso.obterCurso("JavaScript", "JavaScript é", 120);
-        Curso cursoAngular = Curso.obterCurso("Angular", "Angular é", 50);
+      Curso cursoJava = new Curso("Java", "teste", 1002);
+      Curso cursoJavaScript = new Curso("JavaScript", "teste", 1002);
 
-        Mentoria mentoriaJava = new Mentoria("Mentoria Java", "isso foi um teste");
-        Mentoria mentoriaJavaScript = new Mentoria("Mentoria JavaScript", "Esta Mentoria tem a finalidade");
-        Mentoria mentoriaAngular = new Mentoria("Mentoria Angular", "Esta Mentoria tem a finalidade");
+      Curso cursoCsharp = new Curso("C#", "teste", 1002);
+      Curso cursoEntityFrameWork = new Curso("Entity FrameWork", "teste", 1002);
+      
+      Set<Conteudo> conteudosWarburg = new LinkedHashSet<>();
+      conteudosWarburg.add(cursoJava);
+      conteudosWarburg.add(cursoJavaScript);
 
-        Set<Conteudo> conteudos = new LinkedHashSet<>();
-        conteudos.add(cursoJava);
-        conteudos.add(cursoJavaScript);
-        conteudos.add(cursoAngular);
-        conteudos.add(mentoriaJava);
-        conteudos.add(mentoriaJavaScript);
-        conteudos.add(mentoriaAngular);
-       
-        BootCamp bootCamp = new BootCamp("fjhsdfcjsd", "hajsasd",conteudos);
+      Set<Conteudo> conteudosOrangeTech = new LinkedHashSet<>();
+      conteudosOrangeTech.add(cursoCsharp);
+      conteudosOrangeTech.add(cursoEntityFrameWork);
 
-        System.out.println(bootCamp.getConteudos());
-        System.out.println(bootCamp.getDevsInscritos());
+      Dev deve1 = new Dev("Josenildo", conteudosWarburg, null);
+      Dev deve2 = new Dev("Jacob", conteudosOrangeTech, null);
 
+      Set<Dev> devs = new LinkedHashSet<>();
+      devs.add(deve1);
+      devs.add(deve2);
+
+      
+
+      BootCamp Warburg = new BootCamp("Cloud Fullstack", "Warburg- Warburg Pincus");
+      Warburg.setConteudos(conteudosWarburg);
+      Warburg.setDevsInscritos(devs);
+
+      BootCamp orangeTech = new BootCamp("OrangeTech ", "BackEnd");
+      orangeTech.setConteudos(conteudosOrangeTech);
+      orangeTech.setDevsInscritos(devs);
+
+      System.out.println();
+      System.out.println("-----------------------------------------------------------------------------------------------------------");
+
+      System.out.println( "Bootcamp: " + Warburg.getNome() + "\n" + "Descrição: "
+       + Warburg.getDescricao()
+       + "\n" + "Data Início : " + Warburg.getDataInicial() + "\n" + "Data Final : " + Warburg.getDataFinal()
+       + "\n" + "Conteúdos : " + Warburg.getConteudos()
+       + "\n" + "Devs Cadastrados : " + Warburg.getDevsInscritos());
+
+       System.out.println();
+       System.out.println("-----------------------------------------------------------------------------------------------------------");
+
+       System.out.println( "Bootcamp: " + orangeTech.getNome() + "\n" + "Descrição: "
+       + orangeTech.getDescricao()
+       + "\n" + "Data Início : " + orangeTech.getDataInicial() + "\n" + "Data Final : " + orangeTech.getDataFinal()
+       + "\n" + "Conteúdos : " + orangeTech.getConteudos()
+       + "\n" + "Devs Cadastrados : " + orangeTech.getDevsInscritos());
+       System.out.println();
+      System.out.println("-----------------------------------------------------------------------------------------------------------");
     }
 }
